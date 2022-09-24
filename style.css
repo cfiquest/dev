@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Black Star";
+  font-weight: 400;
+  src: url(https://cdn.statically.io/gh/AlainBarrios/Fonts/de1ed86457cd88bfe14c32b6c9030e151e1ad6df/BlackStar-Regular.OTF?raw=true);
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+
+body {
+  /* make the body fits our viewport */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Black Star";
+}
+
+#wrap-texture {
+  position: relative;
+}
+
+#canvas {
+  /* make the canvas wrapper fits the document */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.plane {
+  /* define the size of your plane */
+  width: 100%;
+  height: 100vh;
+}
+
+.plane img {
+  /* hide the img element */
+  display: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  left: 0;
+  top: 0;
+}
+
+.text {
+  color: #322c2f;
+  font-size: 6vmax;
+  letter-spacing: .4rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 10px;
+  mix-blend-mode: difference; 
+  opacity: 0;
+  filter: blur(10px);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
