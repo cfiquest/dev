@@ -746,7 +746,11 @@ The Path:  Our path starts here and ends with greatness
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+  if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+}
+</script>
 </body>
 
 </html>
